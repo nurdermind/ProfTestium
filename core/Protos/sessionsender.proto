@@ -20,14 +20,18 @@ message TestsSenderReply{
 	int32 TestID = 1;
 	string TestName = 2;
 	}
-message SessionSenderReply{
-	repeated int32 SessionID = 1;
-	repeated TestsSenderReply testssenderReply = 2;
-	repeated google.protobuf.Timestamp SessionDate = 3;
-	repeated google.protobuf.Duration DurationSession = 4;
-	repeated bool IsSuccessful = 5;
-	repeated string FailureReason = 6;
-	repeated string SessionUrl = 7;
-	repeated int32 Score = 8;
-	repeated int32 MaxScore = 9;
+message SessionUser{
+	int32 SessionID = 1;
+	TestsSenderReply testssenderReply = 2;
+	google.protobuf.Timestamp SessionDate = 3;
+	google.protobuf.Duration DurationSession = 4;
+	bool  IsSuccessful = 5;
+	string FailureReason = 6;
+	string SessionUrl = 7;
+	int32 Score = 8;
+	int32 MaxScore = 9;
 }
+message SessionSenderReply{
+	repeated SessionUser sessions = 1;
+}
+
