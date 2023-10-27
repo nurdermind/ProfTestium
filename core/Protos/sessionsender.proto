@@ -16,12 +16,12 @@ service SessionSender{
 message SessionSenderRequest{
 	int32 UserID = 1;
 }
-message SessionSenderReply{
-	repeated int32 SessionID = 1;
-	message TestsSenderReply{
+message TestsSenderReply{
 	int32 TestID = 1;
 	string TestName = 2;
 	}
+message SessionSenderReply{
+	repeated int32 SessionID = 1;
 	repeated TestsSenderReply testssenderReply = 2;
 	repeated google.protobuf.Timestamp SessionDate = 3;
 	repeated google.protobuf.Duration DurationSession = 4;
