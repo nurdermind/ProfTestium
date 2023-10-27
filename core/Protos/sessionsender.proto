@@ -25,7 +25,7 @@ message SessionUser{
 	TestsSenderReply testssenderReply = 2;
 	google.protobuf.Timestamp SessionDate = 3;
 	google.protobuf.Duration DurationSession = 4;
-	bool IsSuccessful = 5;
+	bool  IsSuccessful = 5;
 	string FailureReason = 6;
 	string SessionUrl = 7;
 	int32 Score = 8;
