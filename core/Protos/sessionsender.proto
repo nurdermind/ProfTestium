@@ -32,6 +32,4 @@ message SessionUser{
 	int32 MaxScore = 9;
 }
 message SessionSenderReply{
-	repeated SessionUser sessions = 1;
-}
-
+	repeated SessionUser sessions = 1;}
