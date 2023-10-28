@@ -2,6 +2,9 @@ syntax = "proto3";
 
 option csharp_namespace = "ProfTestium_TestService";
 
+import "google/protobuf/duration.proto"; 
+import "google/protobuf/timestamp.proto";
+
 package greet;
 
 service DetailSessionSender{
@@ -11,12 +14,12 @@ message DetailSessionSenderRequest{
 	int32 SessionID = 1;
 }
 message TestsSenderReply{
-	int32 TestID = 1;
-	string TestName = 2;
+	int32  TestID = 1;
+	string  TestName = 2;
 	}
 message SessionUser{
 	int32 sessionID = 1;
-	TestsSenderReply TestssenderReply = 2;
+	TestsSenderReply TestsenderReply = 2;
 	google.protobuf.Timestamp SessionDate = 3;
 	google.protobuf.Duration Durations = 4;
 	bool  IsSuccessful = 5;
