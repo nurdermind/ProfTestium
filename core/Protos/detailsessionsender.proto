@@ -2,19 +2,13 @@ syntax = "proto3";
 
 option csharp_namespace = "ProfTestium_TestService";
 
-
-import "google/protobuf/duration.proto"; 
-import "google/protobuf/timestamp.proto";
-
-
 package greet;
 
-service SessionSender{
-	rpc GetSessionList(SessionSenderRequest) returns(SessionSenderReply);
+service DetailSessionSender{
+	rpc GetDetailSession(DetailSessionSenderRequest) returns(DetailSessionSenderReply);
 }
-
-message SessionSenderRequest{
-	int32 UserID = 1;
+message DetailSessionSenderRequest{
+	int32 SessionID = 1;
 }
 message TestsSenderReply{
 	int32 TestID = 1;
@@ -31,7 +25,6 @@ message SessionUser{
 	int32 Score = 8;
 	int32 MaxScore = 9;
 }
-message SessionSenderReply{
-	repeated SessionUser sessions = 1;
+message DetailSessionSenderReply{
+	SessionUser session = 1;
 }
-
