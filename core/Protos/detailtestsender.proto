@@ -5,7 +5,7 @@ option csharp_namespace = "ProfTestium_TestService";
 package greet;
 
 service DetailTestSender{
-	rpc GetSetailTest(DetailListSenderRequest) returns (DetailTestSenderReply);
+	rpc GetDetailTest(DetailListSenderRequest) returns (DetailTestSenderReply);
 }
 message DetailListSenderRequest{
 	int32 TestID = 1;
