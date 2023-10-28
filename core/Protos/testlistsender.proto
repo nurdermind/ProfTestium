@@ -11,7 +11,7 @@ message TestsListSenderRequest{
 
 }
 
-message QuestionReply{
+message QuestionsReply{
 	string QuestionText = 1;
 	int32 QuestionTypeID = 2;
 	int32  MaxScore = 3;
@@ -22,7 +22,7 @@ message QuestionReply{
 message TestReply{
 	int32 TestID = 1;
 	string TestName = 2;
-	repeated QuestionReply Questions = 3;
+	repeated QuestionsReply Questions = 3;
 }
 message TestsListSenderReply{
 	repeated TestReply Tests = 1;
