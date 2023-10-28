@@ -2,6 +2,7 @@
 using Google.Protobuf.WellKnownTypes;
 using ProfTestium_TestService;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace ProfTestium_TestService.Services
 {
@@ -17,8 +18,8 @@ namespace ProfTestium_TestService.Services
                 {
                     SessionID = item.SessionId,
                     TestssenderReply = new TestsSenderReply { TestID = item.Test.TestId, TestName = item.Test.Testname },
-                    //DurationSession = item.Duration,
-                    //SessionDate = item.SessionDate,
+                    Durations = Duration.FromTimeSpan(item.Duration),
+                    SessionDate = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(TimeZoneInfo.ConvertTimeToUtc(item.SessionDate)),
                     FailureReason = item.FailureReason,
                     IsSuccessful = item.IsSuccessful,
                     MaxScore = item.MaxScore,
