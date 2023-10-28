@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "kvnGfP7SJpNRvgCUv7sa2OsJw72/+YjXJ1jgdRPOJb0=",
+  "Source": "ProfTestium_TestService",
+  "BasePath": "_content/ProfTestium_TestService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
