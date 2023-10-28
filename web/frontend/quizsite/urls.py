@@ -6,7 +6,7 @@ urlpatterns = [
     path("", views.index), # главная страница
     path("signin", views.signin), # вход
     path("signup", views.signup), # регистарция
-    path("profile/<str:user_id>", views.profile), # просмотр профиля
+    path("profile/<str:profile_id>", views.profile), # просмотр профиля
     path("test/view/<str:test_id>", views.test_view), # страница начала теста(отправили сотруднику ссылку)
     path("test/editor/<str:test_id>", views.test_editor), # редактор теста
     path("test/solve/<str:test_id>", views.test_solve), # решение теста

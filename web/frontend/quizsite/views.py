@@ -21,9 +21,11 @@ def signin(request):
 def signup(request):
     return render(request, "sugnup.html", {})
     
-def profile(request, user_id):
+def profile(request, profile_id):
     return render(request, "profile.html", {
-        "admin" : False
+        "admin" : False,
+        "user_id" : "",
+        "profile_id" : profile_id
     }) # TODO
 
 def test_view(request, test_id):
@@ -52,4 +54,17 @@ def test_solve(request, test_id):
     }) # TODO
 
 def admin(request):
+    # TODO : 403
     return render(request, "admin/index.html", {})
+
+def admin_tests(request):
+    # TODO : 403
+    return render(request, "admin/tests.html", {
+        "test_list" : []
+    })
+
+def admin_users(request):
+    # TODO : 403
+    return render(request, "admin/users.html", {
+        "user_list" : []
+    })
