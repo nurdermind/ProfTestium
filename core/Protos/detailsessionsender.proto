@@ -13,21 +13,20 @@ service DetailSessionSender{
 message DetailSessionSenderRequest{
 	int32 SessionID = 1;
 }
-message TestsSenderReply{
+message DetailTestsSenderReply{
 	int32  TestID = 1;
 	string  TestName = 2;
 	}
-message SessionUser{
+message DetailSessionUser{
 	int32 sessionID = 1;
-	TestsSenderReply TestsenderReply = 2;
+	DetailTestsSenderReply TestsenderReply = 2;
 	google.protobuf.Timestamp SessionDate = 3;
 	google.protobuf.Duration Durations = 4;
 	bool  IsSuccessful = 5;
 	string FailureReason = 6;
-	string SessionUrl =7;
-	int32 Score = 8;
-	int32 MaxScore = 9;
+	int32 Score = 7;
+	int32 MaxScore = 8;
 }
 message DetailSessionSenderReply{
-	SessionUser session = 1;
+	DetailSessionUser session = 1;
 }
