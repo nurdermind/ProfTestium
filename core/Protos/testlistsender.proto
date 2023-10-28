@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "ProfTestium_TestService";
+
+package greet;
+
+service TestsListSender{
+	rpc GetTestsList(TestsListSenderRequest) returns(TestsListSenderReply);
+}
+message TestsListSenderRequest{
+
+}
+message TestReply{
+	int32 TestID = 1;
+	string TestName = 2;
+}
+message TestsListSenderReply{
+	repeated TestReply Tests = 1;
+}
