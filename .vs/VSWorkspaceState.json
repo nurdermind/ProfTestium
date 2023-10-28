@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\core",
+    "\\core\\Protos"
   ],
-  "SelectedNode": "\\C:\\Users\\Son\\Source\\Repos\\ProfTestium",
+  "SelectedNode": "\\core\\ProfTestium_TestService.sln",
   "PreviewInSolutionExplorer": false
 }
