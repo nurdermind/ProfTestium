@@ -21,13 +21,13 @@ message TestsSenderReply{
 	string TestName = 2;
 	}
 message SessionUser{
-	int32 SessionID = 1;
-	TestsSenderReply testssenderReply = 2;
+	int32 sessionID = 1;
+	TestsSenderReply TestssenderReply = 2;
 	google.protobuf.Timestamp SessionDate = 3;
-	google.protobuf.Duration DurationSession = 4;
+	google.protobuf.Duration Durations = 4;
 	bool  IsSuccessful = 5;
 	string FailureReason = 6;
-	string SessionUrl = 7;
+	string SessionUrl =7;
 	int32 Score = 8;
 	int32 MaxScore = 9;
 }

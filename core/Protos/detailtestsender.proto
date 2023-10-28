@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option csharp_namespace = "ProfTestium_TestService";
+
+package greet;
+
+service DetailTestSender{
+	rpc GetDetailTest(DetailListSenderRequest) returns (DetailTestSenderReply);
+}
+message DetailListSenderRequest{
+	int32 TestID = 1;
+}
+message QuestionReply{
+	string QuestionText = 1;
+	int32 QuestionTypeID = 2;
+	int32  MaxScore = 3;
+	int32 PictureID = 4;
+	string PicturePath = 5;
+}
+
+message BankOfQuestionReply{
+	int32 PositionID = 1;
+	int32 QuestionID = 2;
+	QuestionReply Question = 3;
+}
+message DetailTestSenderReply{
+	int32 TestID= 1;
+	string TestName =2;
+	repeated BankOfQuestionReply BankOfQuestions = 3;
+}
+
+
