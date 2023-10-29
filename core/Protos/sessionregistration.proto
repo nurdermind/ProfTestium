@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "ProfTestium_TestService";
+
+import "google/protobuf/duration.proto"; 
+import "google/protobuf/timestamp.proto";
+
+package greet;
+
+service SessionRegistration{
+	rpc UserSessionRegistration();
+}
+
+
+message SessionRegistrationRequest{
+	int32 TestID =1;
+	bool  IsSuccessful = 5;
+	string FailureReason = 6;
+}

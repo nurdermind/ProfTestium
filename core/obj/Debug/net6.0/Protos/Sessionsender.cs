@@ -28,23 +28,24 @@ namespace ProfTestium_TestService {
             "cm90b2J1Zi9kdXJhdGlvbi5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVz",
             "dGFtcC5wcm90byImChRTZXNzaW9uU2VuZGVyUmVxdWVzdBIOCgZVc2VySUQY",
             "ASABKAUiNAoQVGVzdHNTZW5kZXJSZXBseRIOCgZUZXN0SUQYASABKAUSEAoI",
-            "VGVzdE5hbWUYAiABKAkilAIKC1Nlc3Npb25Vc2VyEhEKCXNlc3Npb25JRBgB",
+            "VGVzdE5hbWUYAiABKAkiuwIKC1Nlc3Npb25Vc2VyEhEKCXNlc3Npb25JRBgB",
             "IAEoBRIxChBUZXN0c3NlbmRlclJlcGx5GAIgASgLMhcuZ3JlZXQuVGVzdHNT",
             "ZW5kZXJSZXBseRIvCgtTZXNzaW9uRGF0ZRgDIAEoCzIaLmdvb2dsZS5wcm90",
             "b2J1Zi5UaW1lc3RhbXASLAoJRHVyYXRpb25zGAQgASgLMhkuZ29vZ2xlLnBy",
             "b3RvYnVmLkR1cmF0aW9uEhQKDElzU3VjY2Vzc2Z1bBgFIAEoCBIVCg1GYWls",
             "dXJlUmVhc29uGAYgASgJEhIKClNlc3Npb25VcmwYByABKAkSDQoFU2NvcmUY",
-            "CCABKAUSEAoITWF4U2NvcmUYCSABKAUiOgoSU2Vzc2lvblNlbmRlclJlcGx5",
-            "EiQKCHNlc3Npb25zGAEgAygLMhIuZ3JlZXQuU2Vzc2lvblVzZXIyWQoNU2Vz",
-            "c2lvblNlbmRlchJICg5HZXRTZXNzaW9uTGlzdBIbLmdyZWV0LlNlc3Npb25T",
-            "ZW5kZXJSZXF1ZXN0GhkuZ3JlZXQuU2Vzc2lvblNlbmRlclJlcGx5QhqqAhdQ",
-            "cm9mVGVzdGl1bV9UZXN0U2VydmljZWIGcHJvdG8z"));
+            "CCABKAUSEAoITWF4U2NvcmUYCSABKAUSFgoOQ29ycmVjdHBlcmNlbnQYCiAB",
+            "KAUSDQoFTWFya3MYCyABKAkiOgoSU2Vzc2lvblNlbmRlclJlcGx5EiQKCHNl",
+            "c3Npb25zGAEgAygLMhIuZ3JlZXQuU2Vzc2lvblVzZXIyWQoNU2Vzc2lvblNl",
+            "bmRlchJICg5HZXRTZXNzaW9uTGlzdBIbLmdyZWV0LlNlc3Npb25TZW5kZXJS",
+            "ZXF1ZXN0GhkuZ3JlZXQuU2Vzc2lvblNlbmRlclJlcGx5QhqqAhdQcm9mVGVz",
+            "dGl1bV9UZXN0U2VydmljZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::ProfTestium_TestService.SessionSenderRequest), global::ProfTestium_TestService.SessionSenderRequest.Parser, new[]{ "UserID" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ProfTestium_TestService.TestsSenderReply), global::ProfTestium_TestService.TestsSenderReply.Parser, new[]{ "TestID", "TestName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ProfTestium_TestService.SessionUser), global::ProfTestium_TestService.SessionUser.Parser, new[]{ "SessionID", "TestssenderReply", "SessionDate", "Durations", "IsSuccessful", "FailureReason", "SessionUrl", "Score", "MaxScore" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ProfTestium_TestService.SessionUser), global::ProfTestium_TestService.SessionUser.Parser, new[]{ "SessionID", "TestssenderReply", "SessionDate", "Durations", "IsSuccessful", "FailureReason", "SessionUrl", "Score", "MaxScore", "Correctpercent", "Marks" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ProfTestium_TestService.SessionSenderReply), global::ProfTestium_TestService.SessionSenderReply.Parser, new[]{ "Sessions" }, null, null, null, null)
           }));
     }
@@ -470,6 +471,8 @@ namespace ProfTestium_TestService {
       sessionUrl_ = other.sessionUrl_;
       score_ = other.score_;
       maxScore_ = other.maxScore_;
+      correctpercent_ = other.correctpercent_;
+      marks_ = other.marks_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -577,6 +580,28 @@ namespace ProfTestium_TestService {
       }
     }
 
+    /// <summary>Field number for the "Correctpercent" field.</summary>
+    public const int CorrectpercentFieldNumber = 10;
+    private int correctpercent_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Correctpercent {
+      get { return correctpercent_; }
+      set {
+        correctpercent_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Marks" field.</summary>
+    public const int MarksFieldNumber = 11;
+    private string marks_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Marks {
+      get { return marks_; }
+      set {
+        marks_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SessionUser);
@@ -599,6 +624,8 @@ namespace ProfTestium_TestService {
       if (SessionUrl != other.SessionUrl) return false;
       if (Score != other.Score) return false;
       if (MaxScore != other.MaxScore) return false;
+      if (Correctpercent != other.Correctpercent) return false;
+      if (Marks != other.Marks) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -614,6 +641,8 @@ namespace ProfTestium_TestService {
       if (SessionUrl.Length != 0) hash ^= SessionUrl.GetHashCode();
       if (Score != 0) hash ^= Score.GetHashCode();
       if (MaxScore != 0) hash ^= MaxScore.GetHashCode();
+      if (Correctpercent != 0) hash ^= Correctpercent.GetHashCode();
+      if (Marks.Length != 0) hash ^= Marks.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -666,6 +695,14 @@ namespace ProfTestium_TestService {
         output.WriteRawTag(72);
         output.WriteInt32(MaxScore);
       }
+      if (Correctpercent != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Correctpercent);
+      }
+      if (Marks.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Marks);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -711,6 +748,14 @@ namespace ProfTestium_TestService {
         output.WriteRawTag(72);
         output.WriteInt32(MaxScore);
       }
+      if (Correctpercent != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Correctpercent);
+      }
+      if (Marks.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Marks);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -746,6 +791,12 @@ namespace ProfTestium_TestService {
       }
       if (MaxScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(MaxScore);
+      }
+      if (Correctpercent != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Correctpercent);
+      }
+      if (Marks.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Marks);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -793,6 +844,12 @@ namespace ProfTestium_TestService {
       }
       if (other.MaxScore != 0) {
         MaxScore = other.MaxScore;
+      }
+      if (other.Correctpercent != 0) {
+        Correctpercent = other.Correctpercent;
+      }
+      if (other.Marks.Length != 0) {
+        Marks = other.Marks;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -853,6 +910,14 @@ namespace ProfTestium_TestService {
             MaxScore = input.ReadInt32();
             break;
           }
+          case 80: {
+            Correctpercent = input.ReadInt32();
+            break;
+          }
+          case 90: {
+            Marks = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -910,6 +975,14 @@ namespace ProfTestium_TestService {
           }
           case 72: {
             MaxScore = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            Correctpercent = input.ReadInt32();
+            break;
+          }
+          case 90: {
+            Marks = input.ReadString();
             break;
           }
         }
