@@ -54,32 +54,39 @@ namespace ProfTestium_TestService.Services
                     .ThenInclude(f=>f.AnswerVariants).ThenInclude(f=>f.UserAnswers).Include(f => f.Sessions)
                     .Include(f => f.BankOfQuestions).ThenInclude(f => f.Question).ThenInclude(f=>f.OpenQuestionAnswers)
                     .FirstOrDefault(f=>f.TestId==request.TestID);
-                
-                foreach(var session in testToDelete.Sessions)
+
+                if (testToDelete != null)
                 {
-                    datacontext.Sessions.Remove(session);
-                }
-                foreach(var bank in testToDelete.BankOfQuestions)
-                {
-                    foreach (var answervar in bank.Question.AnswerVariants)
+                    foreach (var session in testToDelete.Sessions)
                     {
-                        foreach(var useranwer  in answervar.UserAnswers)
+                        datacontext.Sessions.Remove(session);
+                    }
+                    foreach (var bank in testToDelete.BankOfQuestions)
+                    {
+                        foreach (var answervar in bank.Question.AnswerVariants)
                         {
-                            datacontext.UserAnswers.Remove(useranwer);
+                            foreach (var useranwer in answervar.UserAnswers)
+                            {
+                                datacontext.UserAnswers.Remove(useranwer);
+                            }
+                            datacontext.AnswerVariants.Remove(answervar);
                         }
-                        datacontext.AnswerVariants.Remove(answervar);
+                        foreach (var openquestionanswer in bank.Question.OpenQuestionAnswers)
+                        {
+                            datacontext.OpenQuestionAnswers.Remove(openquestionanswer);
+                        }
+
+                        datacontext.BankOfQuestions.Remove(bank);
+                        datacontext.Questions.Remove(bank.Question);
                     }
-                    foreach(var openquestionanswer  in bank.Question.OpenQuestionAnswers)
-                    {
-                        datacontext.OpenQuestionAnswers.Remove(openquestionanswer);
-                    }
-                    
-                    datacontext.BankOfQuestions.Remove(bank);
-                    datacontext.Questions.Remove(bank.Question);
+                    datacontext.Tests.Remove(testToDelete);
+                    datacontext.SaveChanges();
+                    return Task.FromResult(new DeleteTestReply { IsSuccess = "true", Code = 0 });
                 }
-                datacontext.Tests.Remove(testToDelete);
-                datacontext.SaveChanges();
-                return Task.FromResult(new DeleteTestReply { IsSuccess = "true", Code = 0 });
+                else
+                {
+                    return Task.FromResult(new DeleteTestReply { IsSuccess = "false", Code = 1 });
+                }
             }
         }
     }
