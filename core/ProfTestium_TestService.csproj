@@ -23,6 +23,9 @@
 	<ItemGroup>
 		<Protobuf Include="Protos\useranswerssender.proto" GrpcServices="Server" />
 	</ItemGroup>
+	<ItemGroup>
+		<Protobuf Include="Protos\createnewtest.proto" GrpcServices="Server" />
+	</ItemGroup>
 	
   <ItemGroup>
     <PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />

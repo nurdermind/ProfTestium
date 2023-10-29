@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option csharp_namespace = "ProfTestium_TestService";
+
+package greet;
+
+service CreateDeleteChangeTest{
+	rpc CreateTest(CreateTestRequest) returns(CreateTestReply);
+	//rpc DeleteTest(DeleteTestRequest) returns(DeleteTestReply);
+}
+message AnswerReply{
+	string VariantText = 1;
+	bool isCorrect = 2;
+}
+message QuestionRequest{
+	string QuestionText = 1;
+	int32 QuestionType =2;
+	int32 MaxScore = 3;
+	string PicturePath = 4;
+	repeated AnswerReply Answers = 5;
+	string CorrectAnswer = 6;
+}
+message CreateTestRequest{
+	string TestName = 1;
+	repeated QuestionRequest questions = 2;
+}
+message CreateTestReply{
+	string isSuccess = 1;
+	int32 code = 2;
+}
+
+message DeleteTestRequest{
+	int32 TestID = 1;
+}
+message DeleteTestReply{
+	string isSuccess = 1;
+	int32 code = 2;
+}
