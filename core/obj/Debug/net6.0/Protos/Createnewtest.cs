@@ -34,10 +34,11 @@ namespace ProfTestium_TestService {
             "cmVldC5RdWVzdGlvblJlcXVlc3QiMgoPQ3JlYXRlVGVzdFJlcGx5EhEKCWlz",
             "U3VjY2VzcxgBIAEoCRIMCgRjb2RlGAIgASgFIiMKEURlbGV0ZVRlc3RSZXF1",
             "ZXN0Eg4KBlRlc3RJRBgBIAEoBSIyCg9EZWxldGVUZXN0UmVwbHkSEQoJaXNT",
-            "dWNjZXNzGAEgASgJEgwKBGNvZGUYAiABKAUyWAoWQ3JlYXRlRGVsZXRlQ2hh",
-            "bmdlVGVzdBI+CgpDcmVhdGVUZXN0EhguZ3JlZXQuQ3JlYXRlVGVzdFJlcXVl",
-            "c3QaFi5ncmVldC5DcmVhdGVUZXN0UmVwbHlCGqoCF1Byb2ZUZXN0aXVtX1Rl",
-            "c3RTZXJ2aWNlYgZwcm90bzM="));
+            "dWNjZXNzGAEgASgJEgwKBGNvZGUYAiABKAUymAEKFkNyZWF0ZURlbGV0ZUNo",
+            "YW5nZVRlc3QSPgoKQ3JlYXRlVGVzdBIYLmdyZWV0LkNyZWF0ZVRlc3RSZXF1",
+            "ZXN0GhYuZ3JlZXQuQ3JlYXRlVGVzdFJlcGx5Ej4KCkRlbGV0ZVRlc3QSGC5n",
+            "cmVldC5EZWxldGVUZXN0UmVxdWVzdBoWLmdyZWV0LkRlbGV0ZVRlc3RSZXBs",
+            "eUIaqgIXUHJvZlRlc3RpdW1fVGVzdFNlcnZpY2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
