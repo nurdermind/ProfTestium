@@ -30,6 +30,7 @@ message SessionUser{
 	string SessionUrl =7;
 	int32 Score = 8;
 	int32 MaxScore = 9;
+	string Marks = 10;
 }
 message SessionSenderReply{
 	repeated SessionUser sessions = 1;}

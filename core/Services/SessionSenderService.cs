@@ -23,7 +23,8 @@ namespace ProfTestium_TestService.Services
                     FailureReason = item.FailureReason,
                     IsSuccessful = item.IsSuccessful,
                     MaxScore = item.MaxScore,
-                    Score = item.Score
+                    Score = item.Score,
+                    Marks = item.Mark.Mark1
                 }); 
                 reply.Sessions.AddRange(sessionsFormat);
                 return Task.FromResult(reply);
