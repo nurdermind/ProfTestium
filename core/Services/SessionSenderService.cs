@@ -24,6 +24,7 @@ namespace ProfTestium_TestService.Services
                     IsSuccessful = item.IsSuccessful,
                     MaxScore = item.MaxScore,
                     Score = item.Score,
+                    Correctpercent = item.CorrectPercent??0,
                     Marks = item.Mark.Mark1
                 }); 
                 reply.Sessions.AddRange(sessionsFormat);
