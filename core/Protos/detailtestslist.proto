@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+option csharp_namespace = "ProfTestium_TestService";
+
+package greet;
+
+service DetailTestsListSender{
+	rpc GetQuestionsList(GetQuestionsListRequest) returns (GetQuestionsListReply); //все вопросы по тесту
+	rpc GetOpenQuestionAnswer(GetOpenQuestionAnswersOfUserRequest) returns (GetOpenQuestionAnswerReply); // Все ответы пользователя на открытые вопросы
+	rpc GetCloseQuestionAnswer(GetVariantsAnswareOfCloseTypeQuestion) returns (GetCloseVariantsQuestionAnswerReply); // получить все варианты ответа к вопросу
+}
+message GetQuestionsListRequest{
+	int32 TestID = 1;
+}
+message GetOpenQuestionAnswersOfUserRequest{
+	int32 UserID = 1;
+}
+message GetVariantsAnswareOfCloseTypeQuestion{
+	int32 QuestionID = 1;
+}
+message QuestionsTypeReply{
+	int32 TypeID = 1;
+	string TypeName = 2;
+}
+message PictureReply{
+	int32 PictureID = 1;
+	string PathPicture = 2;
+}
+message OpenQuestionAnswerReply{
+	int32 AnswerID = 1;
+	string UserAnswerText = 2;
+	string CorrectAnswer = 3;
+	int32 UserID = 4;
+	int32 Score = 5;
+	int32 QuestionID = 6;
+}
+message CloseQuestionAnswerReply{
+	int32 CodeofAnswer = 1;
+	bool IsCorrect = 2;
+	int32 QuestionID = 3;
+	string TextVariant = 4;
+}
+message QuestionElementReply{
+	int32 QuestionID = 1;
+	string QuestionText = 2;
+	int32 MaxScore = 3;
+	QuestionsTypeReply TypeQuestion = 4;
+	PictureReply Picture = 5;
+}
+message GetQuestionsListReply{
+	repeated QuestionElementReply Questions = 1;
+}
+message GetCloseVariantsQuestionAnswerReply{
+	repeated CloseQuestionAnswerReply CloseQuestions = 1;
+}
+message GetOpenQuestionAnswerReply{
+	repeated OpenQuestionAnswerReply OpenQuestions = 1;
+}
+

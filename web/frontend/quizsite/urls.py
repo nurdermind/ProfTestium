@@ -3,16 +3,16 @@ from . import views
 
 # TODO: сайт ссылки
 urlpatterns = [
-    path("", views.index), # главная страница
-    path("signin", views.signin), # вход
-    path("signup", views.signup), # регистарция
-    path("profile/<str:user_id>", views.profile), # просмотр профиля
+    path("", views.index, name="index"), # главная страница
+    path("signin", views.signin, name="signin"), # вход
+    path("signup", views.signup, name="signup"), # регистарция
+    path("profile/<str:profile_id>", views.profile), # просмотр профиля
     path("test/view/<str:test_id>", views.test_view), # страница начала теста(отправили сотруднику ссылку)
     path("test/editor/<str:test_id>", views.test_editor), # редактор теста
     path("test/solve/<str:test_id>", views.test_solve), # решение теста
-    path("admin", views.admin), # админка
-    path("admin/tests", views.admin_tests), # отображение всех тестов + действия
-    path("admin/users", views.admin_users) # отображение всех пользователей + действия
+    path("admin", views.admin, name="admin"), # админка
+    path("admin/tests", views.admin_tests, name="tests"), # отображение всех тестов + действия
+    path("admin/users", views.admin_users, name="users") # отображение всех пользователей + действия
 ]
 '''
 urlpatterns = [

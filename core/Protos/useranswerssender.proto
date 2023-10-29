@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option csharp_namespace = "ProfTestium_TestService";
+
+package greet;
+
+service UserAnswersSender{
+	rpc GetUserAnswers(GetUserAnswersRequest) returns (GetUserAnswerReply);  //получить ответ пользователя на закрытый вопрос(ответ на открытый содержится в detailtestlist)
+}
+
+message GetUserAnswersRequest{
+	int32 QuestionID = 1;
+	int32 UserID = 2;
+}
+message AnswerVariants{
+	int32 VariantID = 1;
+	string VariantText = 2;
+	bool IsCorrect = 3;
+}
+message UserQuestionReply{
+	int32 QuestionID = 1;
+	string QuestionText = 2;
+	int32 MaxScore = 3;
+	int32 PictureID = 4;
+	string PicturePath = 5;
+	repeated AnswerVariants AnswersVar = 6;
+	int32 UserAsnwerVariantID = 7;
+}
+message GetUserAnswerReply{
+	UserQuestionReply Question = 1;
+}
