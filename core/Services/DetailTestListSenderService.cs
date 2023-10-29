@@ -67,14 +67,6 @@ namespace ProfTestium_TestService.Services
                 return Task.FromResult(reply);
             }
         }
-        //public override Task<GetUserAnswersReply> GetUserAnswers(GetUserAnswersRequest request, ServerCallContext context)
-        //{
-        //    using (CoreContext datacontext = new CoreContext())
-        //    {
-        //        List<UserAnswer> userAnswers = datacontext.UserAnswers.Include(f=>f.AnswerVariant).Where(f=>f.UserId==request.UserID).ToList(); 
-
-        //    }
-        //}
 
     }
 }
