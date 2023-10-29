@@ -15,6 +15,5 @@ class SessionUserSerializer(serializers.Serializer):
 
     IsSuccessful = serializers.BooleanField()
     FailureReason = serializers.CharField()
-    SessionUrl = serializers.URLField()
     Score = serializers.IntegerField()
     MaxScore = serializers.IntegerField()

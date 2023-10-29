@@ -4,7 +4,7 @@ import proto.detailtestslist_pb2 as s_pb2
 import proto.detailtestslist_pb2_grpc as s_pb2_grpc
 
 
-class AnswerHelper:
+class QuestionHelper:
 
     def __init__(self, test_id):
         self.test_id = test_id
@@ -15,7 +15,7 @@ class AnswerHelper:
             response = stub.GetQuestionsList(s_pb2.GetQuestionsListRequest(TestID=self.test_id))
             return response
 
-    def list_open_question(self, user_id):
+    def list_open_question_answers(self, user_id):
         with grpc.insecure_channel('localhost:50051') as channel:
             stub = s_pb2_grpc.DetailTestsListSenderStub(channel)
             response = stub.GetOpenQuestionAnswer(s_pb2.GetOpenQuestionAnswersOfUserRequest(UserID=user_id))

@@ -21,8 +21,8 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'sessionsender_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-  DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\252\002\027ProfTestium_TestService'
+  _globals['DESCRIPTOR']._options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\252\002\027ProfTestium_TestService'
   _globals['_SESSIONSENDERREQUEST']._serialized_start=95
   _globals['_SESSIONSENDERREQUEST']._serialized_end=133
   _globals['_TESTSSENDERREPLY']._serialized_start=135
