@@ -13,7 +13,7 @@ public partial class Question
 
     public int MaxScore { get; set; }
 
-    public int? PictureId { get; set; }
+    public int PictureId { get; set; }
 
     public virtual ICollection<AnswerVariant> AnswerVariants { get; set; } = new List<AnswerVariant>();
 

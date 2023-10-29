@@ -1,0 +1,4 @@
+obj\Debug\net6.0\Protos/Detailsessionsender.cs \
+obj\Debug\net6.0\Protos/DetailsessionsenderGrpc.cs: C:/Users/Son/.nuget/packages/grpc.tools/2.40.0/build/native/include/google/protobuf/duration.proto\
+ C:/Users/Son/.nuget/packages/grpc.tools/2.40.0/build/native/include/google/protobuf/timestamp.proto\
+ Protos/detailsessionsender.proto

@@ -1,0 +1,2 @@
+obj\Debug\net6.0\Protos/Testlistsender.cs \
+obj\Debug\net6.0\Protos/TestlistsenderGrpc.cs: Protos/testlistsender.proto

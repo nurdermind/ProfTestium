@@ -28,23 +28,23 @@ namespace ProfTestium_TestService {
             "cm90b2J1Zi9kdXJhdGlvbi5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVz",
             "dGFtcC5wcm90byImChRTZXNzaW9uU2VuZGVyUmVxdWVzdBIOCgZVc2VySUQY",
             "ASABKAUiNAoQVGVzdHNTZW5kZXJSZXBseRIOCgZUZXN0SUQYASABKAUSEAoI",
-            "VGVzdE5hbWUYAiABKAkimgIKC1Nlc3Npb25Vc2VyEhEKCXNlc3Npb25JRBgB",
+            "VGVzdE5hbWUYAiABKAkilAIKC1Nlc3Npb25Vc2VyEhEKCXNlc3Npb25JRBgB",
             "IAEoBRIxChBUZXN0c3NlbmRlclJlcGx5GAIgASgLMhcuZ3JlZXQuVGVzdHNT",
             "ZW5kZXJSZXBseRIvCgtTZXNzaW9uRGF0ZRgDIAEoCzIaLmdvb2dsZS5wcm90",
-            "b2J1Zi5UaW1lc3RhbXASMgoPRHVyYXRpb25TZXNzaW9uGAQgASgLMhkuZ29v",
-            "Z2xlLnByb3RvYnVmLkR1cmF0aW9uEhQKDElzU3VjY2Vzc2Z1bBgFIAEoCBIV",
-            "Cg1GYWlsdXJlUmVhc29uGAYgASgJEhIKClNlc3Npb25VcmwYByABKAkSDQoF",
-            "U2NvcmUYCCABKAUSEAoITWF4U2NvcmUYCSABKAUiOgoSU2Vzc2lvblNlbmRl",
-            "clJlcGx5EiQKCHNlc3Npb25zGAEgAygLMhIuZ3JlZXQuU2Vzc2lvblVzZXIy",
-            "WQoNU2Vzc2lvblNlbmRlchJICg5HZXRTZXNzaW9uTGlzdBIbLmdyZWV0LlNl",
-            "c3Npb25TZW5kZXJSZXF1ZXN0GhkuZ3JlZXQuU2Vzc2lvblNlbmRlclJlcGx5",
-            "QhqqAhdQcm9mVGVzdGl1bV9UZXN0U2VydmljZWIGcHJvdG8z"));
+            "b2J1Zi5UaW1lc3RhbXASLAoJRHVyYXRpb25zGAQgASgLMhkuZ29vZ2xlLnBy",
+            "b3RvYnVmLkR1cmF0aW9uEhQKDElzU3VjY2Vzc2Z1bBgFIAEoCBIVCg1GYWls",
+            "dXJlUmVhc29uGAYgASgJEhIKClNlc3Npb25VcmwYByABKAkSDQoFU2NvcmUY",
+            "CCABKAUSEAoITWF4U2NvcmUYCSABKAUiOgoSU2Vzc2lvblNlbmRlclJlcGx5",
+            "EiQKCHNlc3Npb25zGAEgAygLMhIuZ3JlZXQuU2Vzc2lvblVzZXIyWQoNU2Vz",
+            "c2lvblNlbmRlchJICg5HZXRTZXNzaW9uTGlzdBIbLmdyZWV0LlNlc3Npb25T",
+            "ZW5kZXJSZXF1ZXN0GhkuZ3JlZXQuU2Vzc2lvblNlbmRlclJlcGx5QhqqAhdQ",
+            "cm9mVGVzdGl1bV9UZXN0U2VydmljZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::ProfTestium_TestService.SessionSenderRequest), global::ProfTestium_TestService.SessionSenderRequest.Parser, new[]{ "UserID" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ProfTestium_TestService.TestsSenderReply), global::ProfTestium_TestService.TestsSenderReply.Parser, new[]{ "TestID", "TestName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ProfTestium_TestService.SessionUser), global::ProfTestium_TestService.SessionUser.Parser, new[]{ "SessionID", "TestssenderReply", "SessionDate", "DurationSession", "IsSuccessful", "FailureReason", "SessionUrl", "Score", "MaxScore" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ProfTestium_TestService.SessionUser), global::ProfTestium_TestService.SessionUser.Parser, new[]{ "SessionID", "TestssenderReply", "SessionDate", "Durations", "IsSuccessful", "FailureReason", "SessionUrl", "Score", "MaxScore" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ProfTestium_TestService.SessionSenderReply), global::ProfTestium_TestService.SessionSenderReply.Parser, new[]{ "Sessions" }, null, null, null, null)
           }));
     }
@@ -464,7 +464,7 @@ namespace ProfTestium_TestService {
       sessionID_ = other.sessionID_;
       testssenderReply_ = other.testssenderReply_ != null ? other.testssenderReply_.Clone() : null;
       sessionDate_ = other.sessionDate_ != null ? other.sessionDate_.Clone() : null;
-      durationSession_ = other.durationSession_ != null ? other.durationSession_.Clone() : null;
+      durations_ = other.durations_ != null ? other.durations_.Clone() : null;
       isSuccessful_ = other.isSuccessful_;
       failureReason_ = other.failureReason_;
       sessionUrl_ = other.sessionUrl_;
@@ -511,14 +511,14 @@ namespace ProfTestium_TestService {
       }
     }
 
-    /// <summary>Field number for the "DurationSession" field.</summary>
-    public const int DurationSessionFieldNumber = 4;
-    private global::Google.Protobuf.WellKnownTypes.Duration durationSession_;
+    /// <summary>Field number for the "Durations" field.</summary>
+    public const int DurationsFieldNumber = 4;
+    private global::Google.Protobuf.WellKnownTypes.Duration durations_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Protobuf.WellKnownTypes.Duration DurationSession {
-      get { return durationSession_; }
+    public global::Google.Protobuf.WellKnownTypes.Duration Durations {
+      get { return durations_; }
       set {
-        durationSession_ = value;
+        durations_ = value;
       }
     }
 
@@ -593,7 +593,7 @@ namespace ProfTestium_TestService {
       if (SessionID != other.SessionID) return false;
       if (!object.Equals(TestssenderReply, other.TestssenderReply)) return false;
       if (!object.Equals(SessionDate, other.SessionDate)) return false;
-      if (!object.Equals(DurationSession, other.DurationSession)) return false;
+      if (!object.Equals(Durations, other.Durations)) return false;
       if (IsSuccessful != other.IsSuccessful) return false;
       if (FailureReason != other.FailureReason) return false;
       if (SessionUrl != other.SessionUrl) return false;
@@ -608,7 +608,7 @@ namespace ProfTestium_TestService {
       if (SessionID != 0) hash ^= SessionID.GetHashCode();
       if (testssenderReply_ != null) hash ^= TestssenderReply.GetHashCode();
       if (sessionDate_ != null) hash ^= SessionDate.GetHashCode();
-      if (durationSession_ != null) hash ^= DurationSession.GetHashCode();
+      if (durations_ != null) hash ^= Durations.GetHashCode();
       if (IsSuccessful != false) hash ^= IsSuccessful.GetHashCode();
       if (FailureReason.Length != 0) hash ^= FailureReason.GetHashCode();
       if (SessionUrl.Length != 0) hash ^= SessionUrl.GetHashCode();
@@ -642,9 +642,9 @@ namespace ProfTestium_TestService {
         output.WriteRawTag(26);
         output.WriteMessage(SessionDate);
       }
-      if (durationSession_ != null) {
+      if (durations_ != null) {
         output.WriteRawTag(34);
-        output.WriteMessage(DurationSession);
+        output.WriteMessage(Durations);
       }
       if (IsSuccessful != false) {
         output.WriteRawTag(40);
@@ -687,9 +687,9 @@ namespace ProfTestium_TestService {
         output.WriteRawTag(26);
         output.WriteMessage(SessionDate);
       }
-      if (durationSession_ != null) {
+      if (durations_ != null) {
         output.WriteRawTag(34);
-        output.WriteMessage(DurationSession);
+        output.WriteMessage(Durations);
       }
       if (IsSuccessful != false) {
         output.WriteRawTag(40);
@@ -729,8 +729,8 @@ namespace ProfTestium_TestService {
       if (sessionDate_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(SessionDate);
       }
-      if (durationSession_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DurationSession);
+      if (durations_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Durations);
       }
       if (IsSuccessful != false) {
         size += 1 + 1;
@@ -773,11 +773,11 @@ namespace ProfTestium_TestService {
         }
         SessionDate.MergeFrom(other.SessionDate);
       }
-      if (other.durationSession_ != null) {
-        if (durationSession_ == null) {
-          DurationSession = new global::Google.Protobuf.WellKnownTypes.Duration();
+      if (other.durations_ != null) {
+        if (durations_ == null) {
+          Durations = new global::Google.Protobuf.WellKnownTypes.Duration();
         }
-        DurationSession.MergeFrom(other.DurationSession);
+        Durations.MergeFrom(other.Durations);
       }
       if (other.IsSuccessful != false) {
         IsSuccessful = other.IsSuccessful;
@@ -827,10 +827,10 @@ namespace ProfTestium_TestService {
             break;
           }
           case 34: {
-            if (durationSession_ == null) {
-              DurationSession = new global::Google.Protobuf.WellKnownTypes.Duration();
+            if (durations_ == null) {
+              Durations = new global::Google.Protobuf.WellKnownTypes.Duration();
             }
-            input.ReadMessage(DurationSession);
+            input.ReadMessage(Durations);
             break;
           }
           case 40: {
@@ -886,10 +886,10 @@ namespace ProfTestium_TestService {
             break;
           }
           case 34: {
-            if (durationSession_ == null) {
-              DurationSession = new global::Google.Protobuf.WellKnownTypes.Duration();
+            if (durations_ == null) {
+              Durations = new global::Google.Protobuf.WellKnownTypes.Duration();
             }
-            input.ReadMessage(DurationSession);
+            input.ReadMessage(Durations);
             break;
           }
           case 40: {
