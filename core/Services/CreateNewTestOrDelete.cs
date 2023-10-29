@@ -16,29 +16,35 @@ namespace ProfTestium_TestService.Services
                 {
                     if (question.QuestionType == 0)
                     {
-                        QuestionType NewQuestionType = datacontext.QuestionTypes.FirstOrDefault(f => f.QuestionTypeId == question.QuestionType);
-                        Question NewQuestion = new Question() { QuestionText = question.QuestionText, QuestionType = NewQuestionType, MaxScore = question.MaxScore};
-                        datacontext.Questions.Add(NewQuestion);
-                        datacontext.SaveChanges();
-                        foreach(var variant in question.Answers)
+                        QuestionType? NewQuestionType = datacontext.QuestionTypes.FirstOrDefault(f => f.QuestionTypeId == question.QuestionType);
+                        if(NewQuestionType != null)
                         {
-                            AnswerVariant answerVar = new AnswerVariant() { QuestionId = NewQuestion.QuestionId,IsCorrect = variant.IsCorrect,VariantText = variant.VariantText};
-                            datacontext.AnswerVariants.Add(answerVar);
+                            Question NewQuestion = new Question() { QuestionText = question.QuestionText, QuestionType = NewQuestionType, MaxScore = question.MaxScore };
+                            datacontext.Questions.Add(NewQuestion);
+                            datacontext.SaveChanges();
+                            foreach (var variant in question.Answers)
+                            {
+                                AnswerVariant answerVar = new AnswerVariant() { QuestionId = NewQuestion.QuestionId, IsCorrect = variant.IsCorrect, VariantText = variant.VariantText };
+                                datacontext.AnswerVariants.Add(answerVar);
+                                datacontext.SaveChanges();
+                            }
+                            BankOfQuestion bankNote = new BankOfQuestion() { QuestionId = NewQuestion.QuestionId, TestId = NewTest.TestId };
+                            datacontext.BankOfQuestions.Add(bankNote);
                             datacontext.SaveChanges();
                         }
-                        BankOfQuestion bankNote = new BankOfQuestion() { QuestionId = NewQuestion.QuestionId, TestId = NewTest.TestId };
-                        datacontext.BankOfQuestions.Add(bankNote);
-                        datacontext.SaveChanges();
                     }
                     else
                     {
-                        QuestionType NewQuestionType = datacontext.QuestionTypes.FirstOrDefault(f => f.QuestionTypeId == question.QuestionType);
-                        Question NewQuestion = new Question() { QuestionText = question.QuestionText, QuestionType = NewQuestionType, MaxScore = question.MaxScore };
-                        datacontext.Questions.Add(NewQuestion);
-                        datacontext.SaveChanges();
-                        BankOfQuestion bankNote = new BankOfQuestion() { QuestionId = NewQuestion.QuestionId, TestId = NewTest.TestId };
-                        datacontext.BankOfQuestions.Add(bankNote);
-                        datacontext.SaveChanges();
+                        QuestionType? NewQuestionType = datacontext.QuestionTypes.FirstOrDefault(f => f.QuestionTypeId == question.QuestionType);
+                        if( NewQuestionType != null )
+                        {
+                            Question NewQuestion = new Question() { QuestionText = question.QuestionText, QuestionType = NewQuestionType, MaxScore = question.MaxScore };
+                            datacontext.Questions.Add(NewQuestion);
+                            datacontext.SaveChanges();
+                            BankOfQuestion bankNote = new BankOfQuestion() { QuestionId = NewQuestion.QuestionId, TestId = NewTest.TestId };
+                            datacontext.BankOfQuestions.Add(bankNote);
+                            datacontext.SaveChanges();
+                        }
                     }
                 }
                 return Task.FromResult(new CreateTestReply { Code = 0, IsSuccess = "true" });
@@ -49,7 +55,7 @@ namespace ProfTestium_TestService.Services
         {
             using (CoreContext datacontext = new CoreContext())
             {
-                Test testToDelete = datacontext.Tests.Include(f=>f.Sessions)
+                Test? testToDelete = datacontext.Tests.Include(f=>f.Sessions)
                     .Include(f=>f.BankOfQuestions).ThenInclude(f=>f.Question)
                     .ThenInclude(f=>f.AnswerVariants).ThenInclude(f=>f.UserAnswers).Include(f => f.Sessions)
                     .Include(f => f.BankOfQuestions).ThenInclude(f => f.Question).ThenInclude(f=>f.OpenQuestionAnswers)

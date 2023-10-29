@@ -10,6 +10,7 @@ namespace ProfTestium_TestService.Services
             using(CoreContext datacontext = new CoreContext()) { 
 
                 List<Question> questions = datacontext.Questions.Include(f=>f.QuestionType).Include(f=>f.Picture).Include(f=>f.BankOfQuestions).Where(f=>f.BankOfQuestions.Any(s=>s.TestId==request.TestID)).ToList();//?
+
                 GetQuestionsListReply reply = new GetQuestionsListReply();
                 var questionsFormat = questions.Select(item => new QuestionElementReply
                 {

@@ -9,7 +9,11 @@ namespace ProfTestium_TestService.Services
         {
             using(CoreContext datacontext = new CoreContext())
             {
-                Question question = datacontext.Questions.Include(f=>f.Picture).Include(f=>f.AnswerVariants).ThenInclude(f=>f.UserAnswers).FirstOrDefault(f => f.QuestionId == request.QuestionID);
+                Question? question = datacontext.Questions.Include(f=>f.Picture).Include(f=>f.AnswerVariants).ThenInclude(f=>f.UserAnswers).FirstOrDefault(f => f.QuestionId == request.QuestionID);
+                if(question != null)
+                {
+                    return Task.FromResult(new GetUserAnswerReply());
+                }
                 AnswerVariants answerVariants = new AnswerVariants();
                 var ansawersvarFormat = question.AnswerVariants.Select(item => new AnswerVariants
                 {
@@ -17,7 +21,6 @@ namespace ProfTestium_TestService.Services
                     VariantID = item.VariantId,
                     VariantText = item.VariantText
                 });
-                
                 GetUserAnswerReply reply = new GetUserAnswerReply
                 {
                     Question = new UserQuestionReply
