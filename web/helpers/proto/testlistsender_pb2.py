@@ -19,8 +19,8 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'testlistsender_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-  DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\252\002\027ProfTestium_TestService'
+  _globals['DESCRIPTOR']._options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\252\002\027ProfTestium_TestService'
   _globals['_TESTSLISTSENDERREQUEST']._serialized_start=31
   _globals['_TESTSLISTSENDERREQUEST']._serialized_end=55
   _globals['_TESTREPLY']._serialized_start=57
