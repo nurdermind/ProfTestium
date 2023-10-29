@@ -5,24 +5,15 @@ option csharp_namespace = "ProfTestium_TestService";
 package greet;
 
 service DetailTestsListSender{
-	rpc GetQuestionsList(GetQuestionsListRequest) returns (GetQuestionsListReply);
-	rpc GetOpenQuestionAnswer(GetOpenQuestionAnswersOfUserRequest) returns (GetOpenQuestionAnswerReply);
-	rpc GetCloseQuestionAnswer(GetVariantsAnswareOfCloseTypeQuestion) returns (GetCloseVariantsQuestionAnswerReply);
-	rpc GetUserAnswers(GetUserAnswersRequest) returns (GetUserAnswersReply);
+	rpc GetQuestionsList(GetQuestionsListRequest) returns (GetQuestionsListReply); //все вопросы по тесту
+	rpc GetOpenQuestionAnswer(GetOpenQuestionAnswersOfUserRequest) returns (GetOpenQuestionAnswerReply); // Все ответы пользователя на открытые вопросы
+	rpc GetCloseQuestionAnswer(GetVariantsAnswareOfCloseTypeQuestion) returns (GetCloseVariantsQuestionAnswerReply); // получить все варианты ответа к вопросу
 }
 message GetQuestionsListRequest{
 	int32 TestID = 1;
 }
 message GetOpenQuestionAnswersOfUserRequest{
 	int32 UserID = 1;
-}
-message GetUserAnswersRequest{
-	int32 UserID = 1;
-}
-message UserAnswers{
-	int32 UserID = 1;
-	int32 UserAnswareID = 2;
-	CloseQuestionAnswerReply CloseQuestion =3;
 }
 message GetVariantsAnswareOfCloseTypeQuestion{
 	int32 QuestionID = 1;
@@ -64,8 +55,5 @@ message GetCloseVariantsQuestionAnswerReply{
 }
 message GetOpenQuestionAnswerReply{
 	repeated OpenQuestionAnswerReply OpenQuestions = 1;
-}
-message GetUserAnswersReply{
-	repeated UserAnswers UserAnswarQuestion = 1;
 }
 
