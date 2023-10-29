@@ -1,8 +1,8 @@
 import grpc
-import proto.sessionsender_pb2 as s_pb2
-import proto.sessionsender_pb2_grpc as s_pb2_grpc
-import proto.detailsessionsender_pb2 as sd_pb2
-import proto.detailsessionsender_pb2_grpc as sd_pb2_grpc
+import helpers.proto.sessionsender_pb2 as s_pb2
+import helpers.proto.sessionsender_pb2_grpc as s_pb2_grpc
+import helpers.proto.detailsessionsender_pb2 as sd_pb2
+import helpers.proto.detailsessionsender_pb2_grpc as sd_pb2_grpc
 
 
 class SessionHelper:

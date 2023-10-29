@@ -1,8 +1,8 @@
 import grpc
-import proto.testlistsender_pb2 as s_pb2
-import proto.testlistsender_pb2_grpc as s_pb2_grpc
-import proto.detailtestsender_pb2 as d_pb2
-import proto.detailtestsender_pb2_grpc as d_pb2_grpc
+import helpers.proto.testlistsender_pb2 as s_pb2
+import helpers.proto.testlistsender_pb2_grpc as s_pb2_grpc
+import helpers.proto.detailtestsender_pb2 as d_pb2
+import helpers.proto.detailtestsender_pb2_grpc as d_pb2_grpc
 
 
 class TestsHelper:

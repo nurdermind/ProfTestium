@@ -1,7 +1,7 @@
 import grpc
 
-import proto.useranswerssender_pb2 as s_pb2
-import proto.useranswerssender_pb2_grpc as s_pb2_grpc
+import helpers.proto.useranswerssender_pb2 as s_pb2
+import helpers.proto.useranswerssender_pb2_grpc as s_pb2_grpc
 
 
 class UserAnswerHelper:

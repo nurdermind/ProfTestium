@@ -1,7 +1,7 @@
 import grpc
 
-import proto.detailtestslist_pb2 as s_pb2
-import proto.detailtestslist_pb2_grpc as s_pb2_grpc
+import helpers.proto.detailtestslist_pb2 as s_pb2
+import helpers.proto.detailtestslist_pb2_grpc as s_pb2_grpc
 
 
 class QuestionHelper:
