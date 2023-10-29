@@ -6,7 +6,7 @@ package greet;
 
 service CreateDeleteChangeTest{
 	rpc CreateTest(CreateTestRequest) returns(CreateTestReply);
-	//rpc DeleteTest(DeleteTestRequest) returns(DeleteTestReply);
+	rpc DeleteTest(DeleteTestRequest) returns(DeleteTestReply);
 }
 message AnswerReply{
 	string VariantText = 1;
@@ -28,7 +28,6 @@ message CreateTestReply{
 	string isSuccess = 1;
 	int32 code = 2;
 }
-
 message DeleteTestRequest{
 	int32 TestID = 1;
 }

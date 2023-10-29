@@ -49,6 +49,10 @@ namespace ProfTestium_TestService {
     static readonly grpc::Marshaller<global::ProfTestium_TestService.CreateTestRequest> __Marshaller_greet_CreateTestRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ProfTestium_TestService.CreateTestRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::ProfTestium_TestService.CreateTestReply> __Marshaller_greet_CreateTestReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ProfTestium_TestService.CreateTestReply.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::ProfTestium_TestService.DeleteTestRequest> __Marshaller_greet_DeleteTestRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ProfTestium_TestService.DeleteTestRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::ProfTestium_TestService.DeleteTestReply> __Marshaller_greet_DeleteTestReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ProfTestium_TestService.DeleteTestReply.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::ProfTestium_TestService.CreateTestRequest, global::ProfTestium_TestService.CreateTestReply> __Method_CreateTest = new grpc::Method<global::ProfTestium_TestService.CreateTestRequest, global::ProfTestium_TestService.CreateTestReply>(
@@ -57,6 +61,14 @@ namespace ProfTestium_TestService {
         "CreateTest",
         __Marshaller_greet_CreateTestRequest,
         __Marshaller_greet_CreateTestReply);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::ProfTestium_TestService.DeleteTestRequest, global::ProfTestium_TestService.DeleteTestReply> __Method_DeleteTest = new grpc::Method<global::ProfTestium_TestService.DeleteTestRequest, global::ProfTestium_TestService.DeleteTestReply>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "DeleteTest",
+        __Marshaller_greet_DeleteTestRequest,
+        __Marshaller_greet_DeleteTestReply);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -68,14 +80,14 @@ namespace ProfTestium_TestService {
     [grpc::BindServiceMethod(typeof(CreateDeleteChangeTest), "BindService")]
     public abstract partial class CreateDeleteChangeTestBase
     {
-      /// <summary>
-      ///rpc DeleteTest(DeleteTestRequest) returns(DeleteTestReply);
-      /// </summary>
-      /// <param name="request">The request received from the client.</param>
-      /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::ProfTestium_TestService.CreateTestReply> CreateTest(global::ProfTestium_TestService.CreateTestRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::ProfTestium_TestService.DeleteTestReply> DeleteTest(global::ProfTestium_TestService.DeleteTestRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -88,7 +100,8 @@ namespace ProfTestium_TestService {
     public static grpc::ServerServiceDefinition BindService(CreateDeleteChangeTestBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_CreateTest, serviceImpl.CreateTest).Build();
+          .AddMethod(__Method_CreateTest, serviceImpl.CreateTest)
+          .AddMethod(__Method_DeleteTest, serviceImpl.DeleteTest).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -99,6 +112,7 @@ namespace ProfTestium_TestService {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, CreateDeleteChangeTestBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_CreateTest, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ProfTestium_TestService.CreateTestRequest, global::ProfTestium_TestService.CreateTestReply>(serviceImpl.CreateTest));
+      serviceBinder.AddMethod(__Method_DeleteTest, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ProfTestium_TestService.DeleteTestRequest, global::ProfTestium_TestService.DeleteTestReply>(serviceImpl.DeleteTest));
     }
 
   }
