@@ -1,0 +1,2 @@
+obj\Release\net6.0\Protos/Createnewtest.cs \
+obj\Release\net6.0\Protos/CreatenewtestGrpc.cs: Protos/createnewtest.proto

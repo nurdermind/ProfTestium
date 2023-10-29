@@ -1,0 +1,2 @@
+obj\Release\net6.0\Protos/Detailtestslist.cs \
+obj\Release\net6.0\Protos/DetailtestslistGrpc.cs: Protos/detailtestslist.proto

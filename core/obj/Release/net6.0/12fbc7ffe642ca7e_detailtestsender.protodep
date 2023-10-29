@@ -1,0 +1,2 @@
+obj\Release\net6.0\Protos/Detailtestsender.cs \
+obj\Release\net6.0\Protos/DetailtestsenderGrpc.cs: Protos/detailtestsender.proto
